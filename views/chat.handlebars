@@ -1,25 +1,16 @@
 {{#if mensajes}}
   {{#each mensajes}}
-  <div>
-    <h3>{{this.email}}:</h3>
-    <p>{{this.timestamp}}</p>
-    <p>{{this.mensaje}}</p>
-  </div>
+     <div>
+        <span>{{this.email}}</span>
+        <span>[{{this.timestamp}}]: </span>
+        <span>{{this.mensaje}}</span>
+      </div>
   {{/each}}
-    <form action="/chat" method="post">
-      <label for="mensaje">Chat:
-          <textarea id="mensaje" name="mensaje" rows="1" cols="30" required></textarea>
-        </label>
-      <button type="submit">Enviar mensaje</button>
-    </form>
-  </div>
 {{else}}
-  <h1>Todavia no hay mensajes</h1>
-      <form action="/chat" method="post">
-      <label for="mensaje">Chat:
-          <textarea id="mensaje" name="mensaje" rows="1" cols="30" required></textarea>
-        </label>
-      <button type="submit">Enviar mensaje</button>
-    </form>
-  </div>
+<div id="chatHistory">No hay mensajes para mostrar</div>
+  <form id="chatForm">
+    <label for="mensaje">Chat:<textarea id="mensaje" name="mensaje" rows="1" cols="30" required></textarea></label>
+    <input type="submit" value="Enviar mensaje">
+  </form>
+</div>
 {{/if}}

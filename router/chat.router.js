@@ -6,8 +6,8 @@ export const chatRouter = express.Router();
 
 chatRouter.use(autentificacion);
 
-chatRouter.get('/',  chatController.getAll);
+chatRouter.get('/',  chatController.renderChat);
 
-chatRouter.get('/:id',  chatController.findById);
+chatRouter.get('/:email',  chatController.findByEmail);
 
 chatRouter.post('/', chatController.crearChat);

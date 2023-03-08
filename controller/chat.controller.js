@@ -9,32 +9,21 @@ const crearChat = async(req, res) => {
         timestamp: new Date().toLocaleString(),
         mensaje: req.body.mensaje
     }
-    await chatService.save(mensaje);
-    res.redirect('/chat');
+    let result = await chatService.save(mensaje);
+    res.send(result);
 }
 
-const getAll = async(req, res) => {
-    let db = await chatService.getAll();
-    let mensajes = db.map(item => item.toObject());
-    res.render('chat', { mensajes } ); 
+const renderChat = async(req, res) => {
+    res.render('chat'); 
 }
 
-const findById = async(req, res) => {
-    let result = await chatService.findById(req.params.id);
-    res.status(200).send(result);           
-}
-
-const actualizarChat = async(req, res) => {
-    let id = parseInt(req.params.id);
-    let result = await chatService.update(id, req.body);
-    res.status(200).send(result); 
-}
-
-const borrarChat = async(req, res) => {
-    let result = await chatService.deleteById(req.params.id);
-    res.status(200).send(result); 
+const findByEmail = async(req, res) => {
+    let db = await chatService.getByEmail(req.params.email)
+    let mensajes = db.map(res=> res.toObject());
+    if (mensajes[0] == undefined) res.render('failure', {mensaje: 'No existen mensajes con el email provisto', ruta: 'chat'})
+    else res.render('chat', { mensajes });           
 }
 
 export default {
-     crearChat,  getAll, findById, actualizarChat, borrarChat
+    crearChat,  renderChat, findByEmail
 }

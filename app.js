@@ -5,18 +5,19 @@ import mongoose from 'mongoose';
 import passport from 'passport';
 import handlebars from 'express-handlebars'
 import path from 'path';
+import { Server } from 'socket.io';
 import { __dirname } from './utils/utils.js';
 import { PORT, MONGO_URL, COOKIE_MAXAGE, TTL } from './config.js';
-import { productosRouter } from './router/productos.router.js';
-import { dashRouter } from './router/dash.router.js'
-import { cartRouter } from './router/cart.router.js'
-import { chatRouter } from './router/chat.router.js';
+import * as routers from './router/index.js';
+import { chatService } from './controller/chat.controller.js'
 import { initializePassport } from './utils/passport.config.js';
 
 const app = express();
 const server = app.listen(PORT, () => {
     console.log(`Servidor listo`);
 });
+
+const io = new Server(server);
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
@@ -50,10 +51,17 @@ initializePassport();
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/', dashRouter)
-app.use('/productos', productosRouter);
-app.use('/carrito', cartRouter);
-app.use('/chat', chatRouter);
+io.on('connection', socket => {
+    chatService.getAll().then(result=> socket.emit('Historial', result))
+    socket.on('chat', data => {
+        chatService.getAll().then(result => io.emit('Historial', result));
+    })
+})
+
+app.use('/', routers.dashRouter)
+app.use('/productos', routers.productosRouter);
+app.use('/carrito', routers.cartRouter);
+app.use('/chat', routers.chatRouter);
 
 app.use((req, res) => {
     res.redirect('/login');
