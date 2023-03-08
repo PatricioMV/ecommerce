@@ -2,6 +2,7 @@ import path from 'path';
 import passport from 'passport';
 import { __dirname } from '../utils/utils.js';
 import { transporter, getEmailDeRegistro } from '../utils/nodemailer.js';
+import * as config from '../config.js'
 
 class DashController {
     
@@ -45,6 +46,10 @@ class DashController {
             transporter.sendMail(email);
             return res.redirect('/login');
         })(req, res, next);
+    }
+
+    config = (req, res) => { 
+        res.render('info', { config })
     }
 
 }
