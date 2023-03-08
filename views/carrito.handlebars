@@ -1,0 +1,32 @@
+<div class="flex-padre">
+{{#if productos}}
+  {{#each productos}}
+    <div class="producto">
+      <div class="imagen-producto">
+        <img src= {{this.thumbnail}} alt="Imagen del producto">
+      </div>
+      <form class="productos-form" id="formulario-{{@index}}" action="/carrito/sacarDelCarrito" method="post">
+        <input type="hidden" name="idBack" value="{{this.idBack}}">
+        <h3>{{this.nombre}}</h3>
+        <p>{{this.descripcion}}</p>
+        <p>Precio: ${{this.precio}}</p>
+        <p>Categoria: {{this.categoria}}</p>
+        <p>Cantidad: {{this.cantidad}}</p>
+        <input type="number" name="cantidad" value="1" min="1" max={{this.cantidad}}>
+        <button type="submit" class="submit-carrito">Remover del carrito</button>
+      </form>
+    </div>
+  {{/each}}
+    <form action="/carrito" method="post">
+      <label for="direccion">Dirección de entrega:
+          <textarea id="direccion" name="direccion" rows="1" cols="30" placeholder="Av. Siempreviva 742" required></textarea>
+        </label>
+      <button type="submit">Agregar al carrito</button>
+    </form>
+    <form action="/carrito/eliminarCarrito" method="post">
+      <button type="submit">Eliminar carrito</button>
+    </form>
+  </div>
+{{else}}
+  <h1>Todavia no hay productos</h1>
+{{/if}}

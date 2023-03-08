@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <script src="./prueba.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+    <h1>Registro de Usuario:</h1>
+    <form method="post" action='/register' class="publicForm">
+      <fieldset>
+        <label for="nombre">Nombre: <input id="nombre" name="nombre" type="text" required /></label>
+        <label for="apellido">Apellido: <input id="apellido" name="apellido" type="text" required /></label>
+        <label for="telefono">Telefono: <input id="telefono" name="telefono" type="tel" required /></label>
+        <label for="username">Email: <input id="username" name="username" type="email" required /></label>
+        <label for="password">Contraseña: <input id="password" name="password" type="password"  required /></label>
+        <label for="password2">Reingresa la contraseña: <input id="password2" name="password2" type="password"  required /></label>
+      </fieldset>
+      <input type="submit" value="Enviar" />
+    </form>
+    <form action="/login" class="publicForm">
+      <input type="submit" value="Go to Login"/>
+  </form>
+</body>
+</html>

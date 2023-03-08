@@ -1,0 +1,25 @@
+<div class="flex-padre">
+{{#if productos}}
+  {{#each productos}}
+  <div class="producto">
+    <div class="imagen-producto">
+      <img src= {{this.thumbnail}} alt="Imagen del producto">
+    </div>
+    <form class="productos-form" target="iframe-carrito" action="/carrito/miCarrito" method="post">
+      <input type="hidden" name="idBack" value="{{this.idBack}}">
+      <h3>{{this.nombre}}</h3>
+      <p>{{this.descripcion}}</p>
+      <p>Precio: ${{this.precio}}</p>
+      <p>Categoria: {{this.categoria}}</p>
+      <input type="number" name="cantidad" value="1" min="1">
+      <button type="submit" class="submit-carrito">Agregar al carrito</button>
+    </form>
+    <iframe name="iframe-carrito" style="display:none;"></iframe>
+  </div>
+  {{/each}}
+  </div>
+  {{else}}
+  <form class="productos-form" action="/productos/prueba" method="post">
+    <button type="submit" >Cargar Productos de prueba</button>
+  </form>
+{{/if}}
