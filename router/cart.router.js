@@ -8,9 +8,6 @@ cartRouter.use(autentificacion);
 
 cartRouter.get('/', cartController.miCarrito);
 
-//Ver
-cartRouter.get('/:id', idValidator, cartController.findById);
-
 cartRouter.post('/', cartController.crearCarrito);
 
 cartRouter.post('/miCarrito', cartController.agregarAlCarrito);

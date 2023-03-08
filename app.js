@@ -6,7 +6,7 @@ import passport from 'passport';
 import handlebars from 'express-handlebars'
 import path from 'path';
 import { __dirname } from './utils/utils.js';
-import { MONGO_URL } from './config.js';
+import { PORT, MONGO_URL, COOKIE_MAXAGE, TTL } from './config.js';
 import { productosRouter } from './router/productos.router.js';
 import { dashRouter } from './router/dash.router.js'
 import { cartRouter } from './router/cart.router.js'
@@ -14,7 +14,7 @@ import { chatRouter } from './router/chat.router.js';
 import { initializePassport } from './utils/passport.config.js';
 
 const app = express();
-const server = app.listen(8080, () => {
+const server = app.listen(PORT, () => {
     console.log(`Servidor listo`);
 });
 
@@ -42,8 +42,8 @@ app.use(session({
     secret: 'm3lon',
     resave: true,
     saveUninitialized: true,
-    cookie: { maxAge: 3600000 },
-    ttl: 7891968
+    cookie: { maxAge: COOKIE_MAXAGE },
+    ttl: TTL
 }));
 
 initializePassport();

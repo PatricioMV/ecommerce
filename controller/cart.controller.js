@@ -9,12 +9,6 @@ const miCarrito = async(req, res) => {
     res.render('carrito' , { productos });
 }
 
-//ver
-const findById = async(req, res) => {
-    let result = await cartsService.findById(req.params.id);
-    res.status(200).send(result);           
-}
-
 const crearCarrito = async(req, res) => {
     let carrito = req.session.carrito;
     Object.assign(carrito, req.body);
@@ -45,5 +39,5 @@ const eliminarCarrito = async(req, res) => {
 }
 
 export default {
-    crearCarrito, getAll, findById, miCarrito, agregarAlCarrito, sacarDelCarrito, eliminarCarrito
+    crearCarrito, getAll, miCarrito, agregarAlCarrito, sacarDelCarrito, eliminarCarrito
 }
