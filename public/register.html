@@ -8,20 +8,38 @@
     <title>Registro</title>
 </head>
 <body>
-    <h1>Registro de Usuario:</h1>
-    <form method="post" action='/register' class="publicForm">
-      <fieldset>
-        <label for="nombre">Nombre: <input id="nombre" name="nombre" type="text" required /></label>
-        <label for="apellido">Apellido: <input id="apellido" name="apellido" type="text" required /></label>
-        <label for="telefono">Telefono: <input id="telefono" name="telefono" type="tel" required /></label>
-        <label for="username">Email: <input id="username" name="username" type="email" required /></label>
-        <label for="password">Contraseña: <input id="password" name="password" type="password"  required /></label>
-        <label for="password2">Reingresa la contraseña: <input id="password2" name="password2" type="password"  required /></label>
-      </fieldset>
-      <input type="submit" value="Enviar" />
+    
+  <div class="login-box">
+    <form action="/register" method="post">
+      <div class="user-box">
+        <input type="text" name="username" required></input><label>Nombre:</label>
+      </div>
+      <div class="user-box">
+        <input type="text" name="apellido" required></input><label>Apellido:</label>
+      </div>
+      <div class="user-box">
+        <input type="tel" name="telefono" required></input><label>Telefono:</label>
+      </div>
+      <div class="user-box">
+        <input type="email" name="username" required></input><label>Email:</label>
+      </div>
+      <div class="user-box">
+        <input type="password" name="password" required></input><label>Contraseña:</label>
+      </div>
+      <div class="user-box">
+        <input type="password" name="password2" required></input><label>Reingresa la contraseña:</label>
+      </div>
+      <center>
+        <a type="submit" onclick="this.closest('form').submit()">REGISTRARSE<span></span></a>
+      </center>
     </form>
-    <form action="/login" class="publicForm">
-      <input type="submit" value="Go to Login"/>
-  </form>
+  </div>
+
+  <button class="button" onclick="redirectToLogin()">
+    <span class="actual-text">login</span>
+    <span class="hover-text">login</span>
+  </button>
+
+  <script src="./forms.js"></script> 
 </body>
 </html>

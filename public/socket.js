@@ -28,9 +28,9 @@ socket.on('Historial', data => {
         data.forEach(msj => {
             html += `
             <div>
-                <span>${msj.email}</span>
-                <span>[${msj.timestamp}]: </span>
-                <span>${msj.mensaje}</span>
+                <span class="span-email">${msj.email}</span>
+                <span class="span-timestamp">[${msj.timestamp}]: </span>
+                <span class="span-mensaje">${msj.mensaje}</span>
             </div>
             `
         })

@@ -10,7 +10,7 @@ export let productosPrueba = [
   "nombre":"Puré de Tomate",
   "thumbnail":"https://images.rappi.com.ar/products/527463-1562858024900.png?d=128x128&e=webp&q=70",
   "precio":  140,
-  "descripcion":"Ppuré de tomate x 520 gramos. Packing: Caja",
+  "descripcion":"Puré de tomate x 520 gramos. Packing: Caja",
   "categoria":"Almacen"
 },
 {
@@ -35,7 +35,7 @@ export let productosPrueba = [
   "categoria":"Limpieza Del Hogar"
 },
 {
-  "nombre":"Paleta Helada con Cobertura de Chocolate",
+  "nombre":"Helado con Cobertura de Chocolate",
   "thumbnail":"https://images.rappi.com.ar/products/407568584688_lozsyxppteem_125601781661_juodlscdebdc_21182_1.png?d=128x128&e=webp&q=70",
   "precio":  993,
   "descripcion":"Rico helado pasteurizado, para los amantes de los sabores acaramelados, en este caluroso verano consiéntete con este cremoso y delicioso. Cada uno de 53 g.",

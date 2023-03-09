@@ -1,16 +1,7 @@
-{{#if mensajes}}
-  {{#each mensajes}}
-     <div>
-        <span>{{this.email}}</span>
-        <span>[{{this.timestamp}}]: </span>
-        <span>{{this.mensaje}}</span>
-      </div>
-  {{/each}}
-{{else}}
-<div id="chatHistory">No hay mensajes para mostrar</div>
-  <form id="chatForm">
-    <label for="mensaje">Chat:<textarea id="mensaje" name="mensaje" rows="1" cols="30" required></textarea></label>
-    <input type="submit" value="Enviar mensaje">
+<div id="chatHistory"><h1>No hay mensajes para mostrar</h1></div>
+  <form id="chatForm" class="confirmar-compra">
+    <label for="mensaje">Chat:<input type="text" name="mensaje" id="direccion" name="direccion" required></label>
+    <input type="submit" class="boton-carrito" value="Enviar mensaje">
   </form>
 </div>
-{{/if}}
+

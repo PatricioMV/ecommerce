@@ -1,0 +1,14 @@
+No todas las rutas de producto pueden testearse por thunder client debido a validaciones, pero si pueden comprobarse desde el front. 
+Abajo se listan como testear cada ruta, además agrego la coleccion de postman con las request.
+
+Thunder Client: 
+- Post
+- Put
+- Delete
+
+Front:
+- Get All
+- Get by id
+- Get by Categoria
+
+Todas las rutas de carrito y chat deben ser testeadas desde front.
