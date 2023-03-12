@@ -15,7 +15,11 @@ const crearProductosPrueba = async(req, res) => {
 const getAll = async(req, res) => {
     let db = await productosService.getAll();
     let productos = db.map(item => item.toObject());
-    res.render('productos' , { productos });
+    let categorias = [];
+    for (let prod of productos) {
+        if (! categorias.includes(prod['categoria'])) categorias.push(prod['categoria']);
+    }
+    res.render('productos' , { productos, categorias });
 }
 
 const findById = async(req, res) => {

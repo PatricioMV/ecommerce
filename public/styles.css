@@ -1,9 +1,12 @@
 body {
   width: 100%;
-  height: 100vh;
+  height: fit-content;
   margin: 0;
   font-family: Tahoma;
-  background-color: #262749;
+  background: linear-gradient(135deg, #ffdf0b80 50%, transparent 0),linear-gradient(-135deg, #ffdf0b80 50%, transparent 0);
+  background-size: 3em 3em;
+  background-color: #000000;
+  opacity: 1
 }
 
 h1 {
@@ -18,7 +21,7 @@ h1 {
   width: 400px;
   padding: 40px;
   transform: translate(-50%, -50%);
-  background: rgba(24, 20, 20, 0.987);
+  background: rgba(24, 20, 20, 1);
   box-sizing: border-box;
   box-shadow: 0 15px 25px rgba(0,0,0,.6);
   border-radius: 10px;
@@ -74,13 +77,13 @@ h1 {
 }
 
 .login-box a:hover {
-  background: #03f40f;
+  background: #EEED01;
   color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 5px #03f40f,
-              0 0 25px #03f40f,
-              0 0 50px #03f40f,
-              0 0 100px #03f40f;
+  box-shadow: 0 0 5px #EEED01,
+              0 0 25px #EEED01,
+              0 0 50px #EEED01,
+              0 0 100px #EEED01;
 }
 
 .login-box a span {
@@ -103,61 +106,32 @@ h1 {
   left: -100%;
   width: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, #03f40f);
+  background: linear-gradient(90deg, transparent, #EEED01);
   animation: btn-anim1 2s linear infinite;
 }
 
 /* Boton */
 
-.button {
-  margin: 0;
-  height: auto;
-  background: transparent;
-  padding: 0;
+.boton {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: rgba(24, 20, 20, 1);
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
   border: none;
-  --animation-color: #03f40f;
-  letter-spacing: 3px;
-  font-size: 1.2em;
-  font-family: system-ui ;
-  position: absolute;
-  text-transform: uppercase;
-  color: #ffffff;
-}
-
-.hover-text {
-  position: absolute;
-  box-sizing: border-box;
-  content: attr(data-text);
-  color: var(--animation-color);
-  width: 0%;
-  inset: 0;
-  border-right: var(--border-right) solid var(--animation-color);
-  overflow: hidden;
-  transition: 0.5s;
-  -webkit-text-stroke: 1px var(--animation-color);
-}
-
-.button:hover .hover-text {
-  width: 100%;
-  filter: drop-shadow(0 0 23px var(--animation-color))
-}
-
-
-fieldset {
-  border: none;
-  padding: 2rem 0;
-  border-bottom: none;
-}
-
-label {
-  display: block;
-  margin: 0.5rem 0;
-}
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 17px;
+  padding: 16px;
+  width: 130px;
+  cursor: pointer;
+  position: relative;
+  margin: 5px;
+ }
 
 /* nav bar */
 
 nav {
-  background-color: #3b3b4f;
+  background-color:  #010105;
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -187,7 +161,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #4f4f63;
+  background-color: #16161698;
 }
 
 nav a.active {
@@ -207,9 +181,8 @@ nav a.active {
 }
 
 .producto {
-  border: 3px outset #3b3b4f;
-  margin-bottom: 1%;
-  background: rgba(255, 255, 255, 0.959);
+  border: 3px outset #000000;
+  background: rgb(255, 255, 255);
   display: flex;
   height: auto;
   flex-basis: 45%;
@@ -228,7 +201,7 @@ nav a.active {
 .imagen-box{
   background: white;
   min-width: 40%;
-  border-right: 3px solid #3b3b4f;
+  border-right: 3px solid #000000;
   border-radius: 2px;
   display: flex;
   justify-content: center;
@@ -244,7 +217,7 @@ nav a.active {
   text-transform: uppercase;
   font-size: 0.9em;
   font-weight: 600;
-  color: rgb(31, 64, 124);
+  color: #000000c0
 }
 
 .descripcion {
@@ -267,7 +240,7 @@ nav a.active {
 .boton-carrito {
   display: inline-block;
   border-radius: 4px;
-  background-color: #3d405b;
+  background-color:  #000000;
   border: none;
   color: #FFFFFF;
   text-align: center;
@@ -294,13 +267,14 @@ nav a.active {
 
  .confirmar-compra {
   background: rgba(255, 255, 255, 0.959);
-  border: 3px outset #3b3b4f;
+  border: 3px outset #000000;
   border-radius: 2px;
   display: flex;
   width: 45%;
   justify-content: center;
   align-items: center;
-  margin: auto;
+  margin: 2px auto;
+  padding: 3px;
  }
 
  .carrito-checkout{
@@ -316,27 +290,21 @@ nav a.active {
   width: 80%;
   margin: 10px auto;
   overflow-y: scroll; 
-  border: 1px solid #ccc; 
+  border: 1px solid #000000; 
   padding: 10px; 
-  background-color: rgba(245, 222, 179, 0.842);
+  background-color: rgba(245, 222, 179, 0.9);
 }
 
 .span-email {
   font-size: 1em;
   font-weight: 600;
-  color: rgb(31, 64, 124);
+  color: #0E0872;
 }
 
 .span-timestamp {
   font-size: 0.8em;
   font-weight: 500;
   color: rgb(88, 87, 87);
-}
-
-.span-mensaje {
-  font-size: 1em;
-  font-weight: 500;
-  color: rgb(8, 3, 3);
 }
 
 .chat {
@@ -348,7 +316,8 @@ nav a.active {
 /* CONFIG */
 
 .config {
-  background-color: #bdb8b8;
+  background-color: rgba(245, 222, 179, 0.9);
+  border: 1px solid #000000; 
   width: fit-content;
   padding: 2% 10%;
   margin: auto;
@@ -359,7 +328,12 @@ li {
 }
 
 h1 {
-  color: #bdb8b8;
+  background-color: rgba(255, 255, 255, 0.859);
+  padding: 10px;
+  width: fit-content;
+  color: #000000;
+  border: 1px solid #000000; 
+  border-radius: 6px;
 }
 
 .failure {

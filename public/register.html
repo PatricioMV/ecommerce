@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro</title>
+    <link rel="shortcut icon" href="https://img.icons8.com/color/48/null/duck.png">
 </head>
 <body>
     
   <div class="login-box">
     <form action="/register" method="post">
       <div class="user-box">
-        <input type="text" name="username" required></input><label>Nombre:</label>
+        <input type="text" name="nombre" required></input><label>Nombre:</label>
       </div>
       <div class="user-box">
         <input type="text" name="apellido" required></input><label>Apellido:</label>
@@ -35,10 +36,9 @@
     </form>
   </div>
 
-  <button class="button" onclick="redirectToLogin()">
-    <span class="actual-text">login</span>
-    <span class="hover-text">login</span>
-  </button>
+  <form action="/login" method="get">
+    <button type="submit" class="boton" ><span class="span">Log-In</span></button>
+  </form>
 
   <script src="./forms.js"></script> 
 </body>
