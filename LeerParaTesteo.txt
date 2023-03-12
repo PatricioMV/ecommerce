@@ -12,3 +12,5 @@ Front:
 - Get by Categoria
 
 Todas las rutas de carrito y chat deben ser testeadas desde front.
+
+Si se ingresa a la pagina sin cargar productos te da la opcion de cargar productos de prueba. 
